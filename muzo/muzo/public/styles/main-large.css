@@ -1,0 +1,82 @@
+@media screen and (min-width:720px) {
+    .loancard form{
+        flex-direction: row;
+        justify-content: space-evenly;
+        justify-items: center;
+    }
+
+    .bars {
+        display: none;
+    }
+
+    .heroCard h1 {
+        height: 9.5rem;
+    }
+
+    .heroCard p {
+        top: 6.5rem;
+    }
+
+    .brand {
+        grid-column: 1/4;
+    }
+
+    .nav {
+        grid-column: 6/10;
+        grid-row: 1/2;
+        flex-direction: row;
+        padding: 1rem;
+        height: auto;
+    }
+
+    .heroCard {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2/6;
+        grid-row: 2/3;
+    }
+
+    .heroImage {
+        grid-column: 7/9;
+        grid-row: 1/4;
+    }
+
+    .heroCard h1 {
+        font-size: 4rem;
+        padding: .5rem 1rem;
+    }
+
+    .heroCard p {
+        font-size: 1.4rem;
+    }
+
+    .items,
+    .testimonies {
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .archive {
+        grid-template-columns: repeat(2, auto);
+    }
+
+}
+
+@media screen and (min-width:1080px) {
+    .assets {
+        grid-template-columns: repeat(3, 33%);
+        padding: 0 5rem;
+    }
+
+    .items,
+    .testimonies {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .heroImage {
+        grid-column: 8/11;
+    }
+
+    .heroCard {
+        grid-column: 2/5;
+    }
+}

@@ -1,0 +1,207 @@
+/* ===== Sidebar Navigation =====*/
+#hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;   
+}
+
+#hamburger span {
+    display: block;
+    width: 28px;
+    height: 4px;
+    margin: 6px 0;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100%;
+    background: #2c3e50;
+    box-shadow: 2px 0 8px rgb(0, 0, 0, 0.4);
+    transition: left 0.4s ease;
+    z-index: 1050;
+    overflow: auto;
+}
+
+#sidebar.open {
+    left: 0;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+#sidebar ul li {
+    margin: 20px 0;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#sidebar ul li a:hover {
+    color: #3498db;
+}
+
+#close-sidebar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #ecf0f1;
+    cursor: pointer;
+    outline: none;
+}
+
+/*===== Chat Widget =====*/
+/* Hidden by default; toggle visible when "Pyrus.ai" is clicked */
+#chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    font-family:'Roboto', sans-serif;
+    overflow: hidden;
+    z-index: 1000;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+#chat-widget.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Chat Header */
+#chat-header {
+    background: linear-gradient(to right, #4e73df, #224abe);
+    color: #fff;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+#chat-header:hover {
+    background: #224abe;
+}
+
+#chat-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 14px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Chat Body */
+#chat-body {
+    background: #fff;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 15px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+    border-top: 2px solid #4e73df;
+}
+
+#chat-body.open {
+    max-height: 500px;
+    padding: 15px;
+}
+
+/* Form Elements */
+#chat-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.chat-btn {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    outline: none;
+}
+
+#send-btn {
+    background: #4e73df;
+    color: #fff;
+    margin-right: 4%;
+}
+
+#send-btn:hover:not(:disabled) {
+    background: #224abe;
+}
+
+#clear-btn {
+    background: #f8f9fc;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+#clear-btn:hover {
+    background: #e2e6ea;
+}
+
+/* Chat Response Area */
+#chat-response {
+    margin-top: 12px;
+    font-size: 14px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 5px;
+    border-top: 1px solid #ddd;
+}
+
+.chat-response-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f8f9fc;
+    border-radius: 6px;
+    border-left: 4px solid #4e73df;
+}
+
+/* Response adjustments */
+@media screen and (max-width: 480px) {
+    #chat-widget {
+        width: 90%;
+        right: 5%;
+    }
+}
